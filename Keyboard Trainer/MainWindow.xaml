@@ -1,0 +1,97 @@
+﻿<Window x:Name="Window" x:Class="Keyboard_Trainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Keyboard_Trainer"
+        mc:Ignorable="d"
+        Title="Keyboard Trainer" Height="400" Background="White" Width="800" AutomationProperties.Name="Keyboard Training" Icon="/загружено.jpg" ResizeMode="NoResize" Initialized="IsLoaded">
+    <Grid x:Name="FailsLabel">
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"></RowDefinition>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="52*"></RowDefinition>
+            <RowDefinition Height="52*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="SpeedLabel" Grid.Row="0"  Grid.ColumnSpan="3" FontSize="10" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,18" Grid.RowSpan="2">Speed x Char/min</Label>
+        <Label x:Name="FailLabel" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" FontSize="10" FontFamily="Arial" FontWeight="Bold" Margin="57,0,57,18" Grid.RowSpan="2">Fails:</Label>
+        <Label x:Name="DifficultyLabel" Grid.Row="  0" Grid.Column="6" Grid.ColumnSpan="2" FontSize="10" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,18" Grid.RowSpan="2">Difficult:</Label>
+        <Slider x:Name="SliderDifficult" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" Maximum="5" TickPlacement="BottomRight" TickFrequency="1" IsSnapToTickEnabled="True" DragEnter="GetValueSlider" Foreground="#FFD9D9D9" Grid.RowSpan="2">
+
+
+            <Slider.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Slider.Background>
+            <Slider.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Slider.BorderBrush>
+
+        </Slider>
+        <Label x:Name="CaseSensitive" Grid.Row="  0" Grid.Column="11" Grid.ColumnSpan="2" FontSize="10" FontFamily="Arial" FontWeight="Bold" Margin="18,0,10,18" Grid.RowSpan="2">Case Sensitive</Label>
+        <CheckBox x:Name="RadioSensitive" Grid.Row="0" Grid.Column="11" BorderBrush="{x:Null}" Panel.ZIndex="-1" Grid.ColumnSpan="2" Margin="0,0,57,18" Grid.RowSpan="2">
+            <CheckBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA99B9B"/>
+                    <GradientStop Color="#FF878080" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Background>
+            <CheckBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF775E78"/>
+                    <GradientStop Color="#FFB19BB2" Offset="1"/>
+                </LinearGradientBrush>
+            </CheckBox.Foreground>
+        </CheckBox>
+        <Button Grid.Column="8" Grid.Row="1" Grid.ColumnSpan ="3"  Content="Start" FontSize="10" FontFamily="Arial" FontWeight="Bold" Width="165" Height="20" BorderBrush="Black">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF847B89"/>
+                    <GradientStop Color="#FF7C7878" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="11" Grid.ColumnSpan="3" Content="Stop" FontSize="10" FontFamily="Arial" FontWeight="Bold" Width="165" Height="20" BorderBrush="Black">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF847B89" Offset="0"/>
+                    <GradientStop Color="#FF847B89" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="14" Grid.RowSpan="2">
+            <TextBlock.Background>
+                <SolidColorBrush Color="#FF98BCFF" Opacity="0.4"/>
+            </TextBlock.Background></TextBlock>
+        <Button x:Name="ApostrofButton" Grid.Row="4" Grid.Column="0"  Background="#FFFF859F" BorderBrush="Black" Content="`" FontWeight="Bold" FontFamily="Sitka Display" FontSize="20" BorderThickness="1" Height="45" Width="45" Foreground="Black" Cursor="Hand" HorizontalAlignment="Center"/>
+        <Button x:Name="OneButton" Grid.Row="4" Grid.Column="1"  Background="#FFFF859F" BorderBrush="Black" Content="1" FontWeight="Bold" FontFamily="Sitka Display" FontSize="20" BorderThickness="1" Height="45" Width="45" Foreground="Black" Cursor="Hand" HorizontalAlignment="Center"/>
+        <Button x:Name="TwoButton" Grid.Row="4" Grid.Column="2"  Background="#FFFF859F" BorderBrush="Black" Content="2" FontWeight="Bold" FontFamily="Sitka Display" FontSize="20" BorderThickness="1" Height="45" Width="45" Foreground="Black" Cursor="Hand" HorizontalAlignment="Center"/>
+        <Button x:Name="ThreeButton" Grid.Row="4" Grid.Column="3"  Background="#FFF9FF85" BorderBrush="Black" Content="3" FontWeight="Bold" FontFamily="Sitka Display" FontSize="20" BorderThickness="1" Height="45" Width="45" Foreground="Black" Cursor="Hand" HorizontalAlignment="Center"/>
+        <Button x:Name="FourButton_Copy" Grid.Row="4" Grid.Column="4"  Background="#FF86FF85" BorderBrush="Black" Content="4   " FontWeight="Bold" FontFamily="Sitka Display" FontSize="20" BorderThickness="1" Height="45" Width="45" Foreground="Black" Cursor="Hand" HorizontalAlignment="Center"/>
+        
+
+
+    </Grid>
+</Window>

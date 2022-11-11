@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Keyboard_Trainer</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="загружено.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BlurryControls" Version="1.0.24" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+    <PackageReference Include="Stride.EffectCompilerServer" Version="4.1.0.1734" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="загружено.jpg" />
+  </ItemGroup>
+
+</Project>
